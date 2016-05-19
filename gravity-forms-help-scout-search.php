@@ -8,7 +8,7 @@
  */
 $HelpScout_API = get_theme_mod( 'mtps_support_docs_api' );
 //'1d23f2cddf0b5ec4bc4fc437f81fe4beef2d62ea'
-define( HELPSCOUT_DOCS_API_KEY, $HelpScout_API );
+define( 'HELPSCOUT_DOCS_API_KEY', $HelpScout_API );
 
 class MTSP_Int_GF_HS {
 
