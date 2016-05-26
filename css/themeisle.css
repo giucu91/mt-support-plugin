@@ -1,85 +1,85 @@
-.support-page-buttons a.button,
-.support-form .gform_wrapper .gform_page_footer .button {
-	background: #ff7f66;
-    box-shadow: 0px 3px 0px #d76e5a;
-    color: #fff;
-    font-size: 13px;
-    text-shadow: none;
-    border: none;
-    padding: 15px 25px;
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-weight: normal;
-    line-height: 1;
-
-}
-.support-page-buttons a.button:hover,
-.support-form .gform_wrapper .gform_page_footer .button:hover {
-    opacity: 0.9;
-    box-shadow: 0px 3px 0px #d76e5a;
-}
-.support-page-boxes .support-section-title {
-    font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0;
-    line-height: 1;
-    margin-bottom: 15px;
-}
-.support-box p {
-    color: #484848;
-    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin: 5px 0 0;
-    line-height: 1;
-    font-size: 14px;
-}
-.support-page-boxes .support-section-link,
-.support-page-boxes .support-section-link:hover {
-    border: 1px solid #e5e5e5;
-    background: #fff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 25px;
-}
-.mt-support-container .gform_wrapper .top_label input:not([type="radio"]):not([type="submit"]):not([type="button"]) {
-    background: #f9f9f9;
-    box-shadow: inset 0px 1px 3px rgba(0,0,0,0.15);
-    border: 1px solid #d7d7d7;
-    border-radius: 0px;
-    padding: 10px 10px !important;
-    margin: 0;
-    margin-bottom: 10px;
-    font-size: 13px !important;
-}
-.mt-support-container .gform_wrapper .top_label input[type="radio"] {
-	margin-left: 5px !important;
-}
-.mt-support-container .gform_wrapper .top_label .helpscout-docs input {
-    margin-bottom: 0 !important;
-}
-.support-title.gfield,
-.support-form .gform_wrapper ul li.gfield.form-title,
-.support-form .gform_wrapper ul li.gf_list_2col > label,
-.support-form .gform_wrapper ul li.group-title,
-.support-form .gform_wrapper ul li.input-with-title label {
-    font-family: "Droid Serif", sans-serif;
-    font-weight: bold;
-    color: #2f2f2f;
-    line-height: 1;
-    font-size: 23px;
-}
-.docs-search-wrap span.results-found,
-.support-form .gform_wrapper .docs-search-results li.article a {
-    font-size: 13px;
-    font-family: HelveticaNeue, "Helvetica Neue", Helvetica, "Lato", Arial, sans-serif;
-}
-.mt-support-container .gform_wrapper .top_label .gfield_description {
-    color: #919191;
-    font-family: HelveticaNeue, "Helvetica Neue", "Lato", Arial, sans-serif;
-    font-size: 14px;
-    padding-top: 0;
-}
-.gfield_radio label {
-    color: #919191;
-    font-size: 14px;
+.support-page-buttons a.button,
+.support-form .gform_wrapper .gform_page_footer .button {
+	background: #ff7f66;
+    box-shadow: 0px 3px 0px #d76e5a;
+    color: #fff;
+    font-size: 13px;
+    text-shadow: none;
+    border: none;
+    padding: 15px 25px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 1;
+
+}
+.support-page-buttons a.button:hover,
+.support-form .gform_wrapper .gform_page_footer .button:hover {
+    opacity: 0.9;
+    box-shadow: 0px 3px 0px #d76e5a;
+}
+.support-page-boxes .support-section-title {
+    font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+.support-box p {
+    color: #484848;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 5px 0 0;
+    line-height: 1;
+    font-size: 14px;
+}
+.support-page-boxes .support-section-link,
+.support-page-boxes .support-section-link:hover {
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 25px;
+}
+.mt-support-container .gform_wrapper .top_label input:not([type="radio"]):not([type="submit"]):not([type="button"]) {
+    background: #f9f9f9;
+    box-shadow: inset 0px 1px 3px rgba(0,0,0,0.15);
+    border: 1px solid #d7d7d7;
+    border-radius: 0px;
+    padding: 10px 10px !important;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 13px !important;
+}
+.mt-support-container .gform_wrapper .top_label input[type="radio"] {
+	margin-left: 5px !important;
+}
+.mt-support-container .gform_wrapper .top_label .helpscout-docs input {
+    margin-bottom: 0 !important;
+}
+.support-title.gfield,
+.support-form .gform_wrapper ul li.gfield.form-title,
+.support-form .gform_wrapper ul li.gf_list_2col > label,
+.support-form .gform_wrapper ul li.group-title,
+.support-form .gform_wrapper ul li.input-with-title label {
+    font-family: "Droid Serif", sans-serif;
+    font-weight: bold;
+    color: #2f2f2f;
+    line-height: 1;
+    font-size: 23px;
+}
+.docs-search-wrap span.results-found,
+.support-form .gform_wrapper .docs-search-results li.article a {
+    font-size: 13px;
+    font-family: HelveticaNeue, "Helvetica Neue", Helvetica, "Lato", Arial, sans-serif;
+}
+.mt-support-container .gform_wrapper .top_label .gfield_description {
+    color: #919191;
+    font-family: HelveticaNeue, "Helvetica Neue", "Lato", Arial, sans-serif;
+    font-size: 14px;
+    padding-top: 0;
+}
+.gfield_radio label {
+    color: #919191;
+    font-size: 14px;
 }
