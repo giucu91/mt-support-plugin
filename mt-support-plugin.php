@@ -3,23 +3,46 @@
  *	Plugin Name: MT Support Plugin
  *	Plugin URI: http://www.machothemes.com/
  *	Description: Create custom Support Page with Gravity Forms and HelpScout
- *	Version: 1.0.0
+ *	Version: 1.0.1
  *	Author: Macho Themes
  *	Author URI: http://www.machothemes.com
  */
 
-// Enqueue Style
+
+/*
+ * WordPress is_plugin_active method, called first
+ */
+
+if ( ! function_exists( 'is_plugin_active' ) ) {
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    }
+
+
+/* 
+ * To require plugin files properly, create defines to avoide linking issues
+ * @since ver 1.0.1
+ */
+
+define( 'TI_SUPPORT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TI_SUPPORT_SUPPORT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+
+// Enqueue Style - TODO: Add Assets folder as a define
 function mtsp_plugin_style() {
-    wp_enqueue_style( 'mtsp-style', plugins_url( 'css/style.css', __FILE__ ) );
-    wp_enqueue_style( 'mtsp-themeisle-style', plugins_url( 'css/themeisle.css', __FILE__ ) );
+    wp_enqueue_style( 'mtsp-style', TI_SUPPORT_SUPPORT_PLUGIN_URL . 'css/style.css' );
+    wp_enqueue_style( 'mtsp-themeisle-style', TI_SUPPORT_SUPPORT_PLUGIN_URL . 'css/themeisle.css' );
 }
 add_action( 'wp_enqueue_scripts', 'mtsp_plugin_style' );
 
-// Include Gravity Form and HelpScout integration
-require_once 'gravity-forms-help-scout-search.php';
+/*
+ * Required Files
+ * gravity-forms-help-scout-search.php: Gravity Forms and Helpscout API client
+ * plugin-shortcode.php: Plugin Shortcode function
+ * @since ver 1.0.1
+ */
 
-// Include Shortcode
-require_once 'plugin-shortcode.php';
+require_once( TI_SUPPORT_PLUGIN_PATH . '/gravity-forms-help-scout-search.php' );
+require_once( TI_SUPPORT_PLUGIN_PATH . '/plugin-shortcode.php' );
 
 
 // Function for get all gravity forms
@@ -291,7 +314,11 @@ if( !function_exists( 'mtsp_customizer' ) ) {
 			    )
 			);
 
-		}
+		} else {
+            
+            // TODO: Add a notification that Gravity Forums have to be installed, before plugin activated.
+            
+        }
 
 	}
 }
