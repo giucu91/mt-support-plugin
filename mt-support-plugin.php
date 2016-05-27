@@ -69,31 +69,48 @@ if ( $gravity_form && $gravity_form != -1 ) {
 }
 
 // Function for populate select with all products
-add_filter( 'gform_pre_render_2', 'mtsp_populate_posts' );
-add_filter( 'gform_pre_validation_2', 'mtsp_populate_posts' );
-add_filter( 'gform_pre_submission_filter_2', 'mtsp_populate_posts' );
-add_filter( 'gform_admin_pre_render_2', 'mtsp_populate_posts' );
+add_filter( 'gform_pre_render', 'mtsp_populate_posts' );
+add_filter( 'gform_pre_validation', 'mtsp_populate_posts' );
+add_filter( 'gform_pre_submission_filter', 'mtsp_populate_posts' );
+add_filter( 'gform_admin_pre_render', 'mtsp_populate_posts' );
 function mtsp_populate_posts( $form ) {
 
     foreach ( $form['fields'] as &$field ) {
-
-        if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-products' ) === false ) {
+        if ( strpos( $field->cssClass, 'populate-products' ) === false && strpos( $field->cssClass, 'populate-first-name' ) === false 
+        	&&  strpos( $field->cssClass, 'populate-last-name' ) === false &&  strpos( $field->cssClass, 'populate-email' ) === false ) {
             continue;
         }
 
-        // you can add additional parameters here to alter the posts that are retrieved
-        // more info: [http://codex.wordpress.org/Template_Tags/get_posts](http://codex.wordpress.org/Template_Tags/get_posts)
-        $posts = get_posts( 'numberposts=-1&post_status=publish&post_type=download' );
+        $current_user = wp_get_current_user();
 
-        $choices = array();
+        if ( strpos( $field->cssClass, 'populate-products' ) !== false ) {
+        	// you can add additional parameters here to alter the posts that are retrieved
+	        // more info: [http://codex.wordpress.org/Template_Tags/get_posts](http://codex.wordpress.org/Template_Tags/get_posts)
+	        $posts = get_posts( 'numberposts=-1&post_status=publish&post_type=download' );
 
-        foreach ( $posts as $post ) {
-            $choices[] = array( 'text' => $post->post_title, 'value' => $post->post_title );
+	        $choices = array();
+
+	        foreach ( $posts as $post ) {
+	            $choices[] = array( 'text' => $post->post_title, 'value' => $post->post_title );
+	        }
+
+	        // update 'Select a Post' to whatever you'd like the instructive option to be
+	        $field->placeholder = 'Select a Product';
+	        $field->choices = $choices;
+        }elseif ( strpos( $field->cssClass, 'populate-first-name' ) !== false ) {
+        	if ( isset($current_user->first_name) ) {
+        		$field->defaultValue = $current_user->user_firstname;
+        	}
+        }elseif ( strpos( $field->cssClass, 'populate-last-name' ) !== false ) {
+        	if ( isset($current_user->last_name) ) {
+        		$field->defaultValue = $current_user->user_lastname;
+        	}
+        }elseif ( strpos( $field->cssClass, 'populate-email' ) !== false ) {
+        	if ( isset($current_user->last_name) ) {
+        		$field->defaultValue = $current_user->user_email;
+        	}
         }
-
-        // update 'Select a Post' to whatever you'd like the instructive option to be
-        $field->placeholder = 'Select a Product';
-        $field->choices = $choices;
+        
 
     }
 
